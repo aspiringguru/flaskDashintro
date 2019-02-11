@@ -1,0 +1,20 @@
+
+virtualenv --version
+virtualenv venv
+source venv/Scripts/activate
+
+pip install dash==0.36.0  # The core dash backend
+pip install dash-html-components==0.13.5  # HTML components
+pip install dash-core-components==0.43.0  # Supercharged components
+pip install dash-table==3.1.11  # Interactive DataTable component (new!)
+pip install dash-daq==0.1.0  # DAQ components (newly open-sourced!)
+
+pip install dash
+pip install dash-html-components
+pip install dash-core-components
+pip install dash-table
+pip install dash-daq
+
+
+https://dash.plot.ly/getting-started
+python app1.py
