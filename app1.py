@@ -8,14 +8,28 @@ external_stylesheets = ['style.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
+colors = {
+    'background': 'white',
+    'text': 'red'
+}
 
+app.layout = html.Div(
+  style={'backgroundColor': colors['background']},
+  children=[
+    html.H1(
+        children='Hello Dash',
+        style={
+            'textAlign': 'center',
+            'color': colors['text']
+        },
+    ),
 
-app.layout = html.Div(children=[
-    html.H1(children='Bar Chart'),
-
-    html.Div(children='''
-        Dash: A web application framework for Python.
-    '''),
+    html.Div(children='Dash: A web application framework for Python.',
+            style=  {
+                        'textAlign': 'center',
+                        'color': colors['text']
+                    }
+    ),
 
     dcc.Graph(
         id='example-graph',
@@ -25,7 +39,9 @@ app.layout = html.Div(children=[
                 {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
             ],
             'layout': {
-                'title': 'Dash Data Visualization'
+                'plot_bgcolor': colors['background'],
+                'paper_bgcolor': colors['background'],
+                'font': { 'color': colors['text'] }
             }
         }
     )
