@@ -69,7 +69,7 @@ app.layout = html.Div([
 def update_graph(xaxis_column_name, yaxis_column_name,
                  xaxis_type, yaxis_type,
                  year_value):
-    dff = df[df['Year'] == year_value]
+    dff = df[df['Year'] >= year_value]
 
     return {
         'data': [go.Scatter(
